@@ -4,6 +4,7 @@ import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by lance on 2023/3/22.
+ * 门闩，减法计数器
  */
 public class UseCountDownLatch {
     public static void main(String[] args) {
