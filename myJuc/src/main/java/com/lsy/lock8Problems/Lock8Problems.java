@@ -1,4 +1,4 @@
-package com.lsy.lock8;
+package com.lsy.lock8Problems;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package com.lsy.executor;
+package com.lsy.threadPool;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;

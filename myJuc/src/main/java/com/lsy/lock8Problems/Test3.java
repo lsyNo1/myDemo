@@ -1,33 +1,27 @@
-package com.lsy.lock8;
+package com.lsy.lock8Problems;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by lance on 2023/3/22.
- * 2、同一个对象，两个同步方法A和B，A方法等待四秒，谁先执行
+ * 3、同一个对象，两个同步方法A和B，一个非同步方法C，谁先执行
  */
-class Test2 {
+class Test3 {
     public static void main(String[] args) {
-
-//        Test1 test = new Test1();
-        Test2 test = new Test2();
+        Test3 test = new Test3();
 
         new Thread(() -> {
             test.a();
         }, "A").start();
 
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
         new Thread(() -> {
             test.b();
         }, "B").start();
 
-
+        new Thread(() -> {
+            test.c();
+        }, "C").start();
     }
+
     public synchronized void a() {
         try {
             TimeUnit.SECONDS.sleep(1);
@@ -38,6 +32,16 @@ class Test2 {
     }
 
     public synchronized void b() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println(Thread.currentThread().getName());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void c() {
         System.out.println(Thread.currentThread().getName());
     }
+
 }

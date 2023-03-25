@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by lance on 2023/3/23.
+ * 阻塞队列
  */
 public class UseBlockingQueue {
     public static void main(String[] args) throws InterruptedException {

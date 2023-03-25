@@ -1,4 +1,4 @@
-package com.lsy.executor;
+package com.lsy.threadPool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,7 +11,8 @@ public class UseExecutor {
     public static void main(String[] args) {
 //        ExecutorService threadPool = Executors.newSingleThreadExecutor(); // 创建单个线程池
 //        ExecutorService threadPool = Executors.newFixedThreadPool(5);//创建指定个数线程池
-    ExecutorService threadPool = Executors.newCachedThreadPool();//创建弹性线程池
+//    ExecutorService threadPool = Executors.newCachedThreadPool();//创建弹性线程池
+        ExecutorService threadPool = Executors.newScheduledThreadPool(5);//创建周期性执行任务线程池
 
         try {
             for (int i = 1; i <= 10; i++) {

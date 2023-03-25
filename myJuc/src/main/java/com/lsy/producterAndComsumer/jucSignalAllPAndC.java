@@ -6,6 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by lance on 2023/3/21.
+ * 多线程交替通知
  */
 public class jucSignalAllPAndC {
 

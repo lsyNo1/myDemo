@@ -1,21 +1,20 @@
-package com.lsy.lock8;
+package com.lsy.lock8Problems;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * 4、两个对象，两个同步方法A和B，谁先执行
+ * 7、一个对象，一个同步方法A，一个静态方法B，谁先执行
  */
-class Test4 {
+class Test7 {
     public static void main(String[] args) {
-        Test4 test1 = new Test4();
-        Test4 test2 = new Test4();
+        Test7 test1 = new Test7();
 
         new Thread(() -> {
             test1.a();
         }, "A").start();
 
         new Thread(() -> {
-            test2.b();
+            test1.b();
         }, "B").start();
 
     }
@@ -29,7 +28,7 @@ class Test4 {
         }
     }
 
-    public synchronized void b() {
+    public static synchronized void b() {
         try {
             TimeUnit.SECONDS.sleep(1);
             System.out.println(Thread.currentThread().getName());
