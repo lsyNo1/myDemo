@@ -1,4 +1,4 @@
-package com.lsy.callable;
+package com.lsy.util;
 
 import java.util.concurrent.CountDownLatch;
 

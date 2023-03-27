@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
  * 6、两个对象，两个同步静态方法A和B，谁先执行
  * 7、一个对象，一个同步方法A，一个静态方法B，谁先执行
  * 8、两个对象，一个同步方法A，一个静态方法B，谁先执行
+ * <p>
+ * 结论，锁，锁的是对象或者Class文件
  */
 public class Lock8Problems {
 
